@@ -10,25 +10,38 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <mct:DrawingView x:Name="DrawBoard"
-                   LineColor="Black"
-                   LineWidth="5" 
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                             HeightRequest="250"
-                   IsMultiLineModeEnabled="True"
-                   DrawingLineCompleted="DrawBoard_DrawingLineCompleted"
-                   BackgroundColor="AliceBlue"/>
+            <VerticalStackLayout Spacing="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <HorizontalStackLayout Spacing="880" 
+                    BackgroundColor="AliceBlue">
+                    <Button Text="Clear Board" 
+                            Clicked="Button_Clicked"
+                            BackgroundColor="AliceBlue"
+                            BorderColor="AliceBlue"
+                            TextColor="Red"/>
+                    <Button Text="Accept"
+                            Clicked="OnAccept"
+                            BackgroundColor="AliceBlue"
+                            BorderColor="AliceBlue"
+                            TextColor="Green"/>
+                </HorizontalStackLayout>
+                <mct:DrawingView x:Name="DrawBoard"
+                    LineColor="Black"
+                    LineWidth="5" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                                HeightRequest="250"
+                    IsMultiLineModeEnabled="True"
+                    DrawingLineCompleted="DrawBoard_DrawingLineCompleted"
+                    BackgroundColor="AliceBlue"/>
+            </VerticalStackLayout>
 
             <Image x:Name="ImageView"
                     HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   BackgroundColor="White"
-       HeightRequest="200"/>
-
-            <Button Text="Clear Board" 
-                    Clicked="Button_Clicked"/>
-
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="White"
+                    HeightRequest="200"/>
         </VerticalStackLayout>
     </ScrollView>
 
