@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using MauiDrawingApp.Interfaces;
+using MauiDrawingApp.Services;
+
 namespace MauiDrawingApp;
 
 public static class MauiProgram
@@ -9,6 +12,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .RegisterAppServices()
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
@@ -21,5 +25,12 @@ public static class MauiProgram
 #endif
 
         return builder.Build();
+    }
+
+    public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddSingleton<ITiffProvider, TiffProvider>();
+
+        return mauiAppBuilder;
     }
 }
