@@ -25,14 +25,14 @@ public class TiffProvider : ITiffProvider
         byte[] bytes = data.ToArray();
 #if DEBUG
         // For debugging purposes write out the signature tiff file for reviewing
-        var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-            "signature.tiff");
-        if (data.Save(path, atomically: true))
-        {
-            Console.WriteLine(path);
-        }
+        // var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+        //     "signature.tiff");
+        // if (data.Save(path, atomically: true))
+        // {
+        //     Console.WriteLine(path);
+        // }
 
-        File.WriteAllBytes(path, bytes);
+        // File.WriteAllBytes(path, bytes);
 #endif
         return bytes;
     }

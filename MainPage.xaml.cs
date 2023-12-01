@@ -35,8 +35,8 @@ public partial class MainPage : ContentPage
         #elif ANDROID
 
         #elif __IOS__ || __MACCATALYST__
-            var image = new UIImage(Foundation.NSData.FromArray(imageBytes));
-            image.SaveToPhotosAlbum((image, error) => {});
+            //var image = new UIImage(Foundation.NSData.FromArray());
+            //image.SaveToPhotosAlbum((image, error) => {});
 
         #endif
         DrawBoard.Lines.Clear();

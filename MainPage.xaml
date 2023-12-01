@@ -12,26 +12,35 @@
 
             <VerticalStackLayout Spacing="0"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
-                <HorizontalStackLayout Spacing="880" 
-                    BackgroundColor="AliceBlue">
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="AliceBlue">
+                <Grid BackgroundColor="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <Button Text="Clear Board" 
                             Clicked="Button_Clicked"
                             BackgroundColor="AliceBlue"
                             BorderColor="AliceBlue"
-                            TextColor="Red"/>
+                            TextColor="Red"
+                            HorizontalOptions="Start"
+                            Grid.Column="0"/>
                     <Button Text="Accept"
                             Clicked="OnAccept"
                             BackgroundColor="AliceBlue"
                             BorderColor="AliceBlue"
-                            TextColor="Green"/>
-                </HorizontalStackLayout>
+                            TextColor="Green"
+                            HorizontalOptions="End"
+                            Grid.Column="1"/>
+                </Grid>
+                    
                 <mct:DrawingView x:Name="DrawBoard"
                     LineColor="Black"
                     LineWidth="5" 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                                HeightRequest="250"
+                                HeightRequest="130"
                     IsMultiLineModeEnabled="True"
                     DrawingLineCompleted="DrawBoard_DrawingLineCompleted"
                     BackgroundColor="AliceBlue"/>

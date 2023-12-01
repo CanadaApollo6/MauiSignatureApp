@@ -13,6 +13,7 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .RegisterAppServices()
+            .RegisterViewModels()
             .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
@@ -30,6 +31,13 @@ public static class MauiProgram
     public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddSingleton<ITiffProvider, TiffProvider>();
+
+        return mauiAppBuilder;
+    }
+
+    public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddSingleton<MainPage>();
 
         return mauiAppBuilder;
     }
